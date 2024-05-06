@@ -166,7 +166,7 @@ class Home extends Component {
   renderStoryLoadingView = () => (
     <div
       className="story-loader-container d-flex justify-content-center align-items-center"
-      testid="loader"
+      data-testid="loader"
     >
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
@@ -175,7 +175,7 @@ class Home extends Component {
   renderLoadingView = () => (
     <div
       className="loader-container m-auto d-flex justify-content-center align-items-center"
-      testid="loader"
+      data-testid="loader"
     >
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>

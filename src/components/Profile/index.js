@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner'
 import {BsGrid3X3} from 'react-icons/bs'
 import {BiCamera} from 'react-icons/bi'
 import Header from '../Header'
-import Search from '../Search'
 import './index.css'
 import SearchContext from '../../context/SearchContext'
 
@@ -28,7 +27,6 @@ class Profile extends Component {
     const {
       followersCount,
       followingCount,
-      id,
       posts,
       postsCount,
       profilePic,
@@ -161,7 +159,7 @@ class Profile extends Component {
   )
 
   renderLoader = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
     </div>
   )
@@ -176,6 +174,7 @@ class Profile extends Component {
       <h1 className="search-not-found">Page Not Found</h1>
       <p className="search-para">Something went wrong. Please try again</p>
       <button
+        type="button"
         onClick={() => this.getProfileDetails()}
         className="home-btn btn btn-primary"
       >

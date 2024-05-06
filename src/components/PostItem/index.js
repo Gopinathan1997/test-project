@@ -4,10 +4,8 @@ import {BsHeart} from 'react-icons/bs'
 import {FaRegComment} from 'react-icons/fa'
 import {BiShareAlt} from 'react-icons/bi'
 import {FcLike} from 'react-icons/fc'
-import Cookies from 'js-cookie'
 
 import './index.css'
-import SearchContext from '../../context/SearchContext'
 
 class PostItem extends Component {
   onLike = () => {
@@ -54,17 +52,19 @@ class PostItem extends Component {
           <div className="d-flex icon-container">
             {likeStatus ? (
               <button
+                type="button"
                 aria-label="button"
                 className="btn"
                 onClick={this.onUnLike}
-                testid="unLikeIcon"
+                data-testid="unLikeIcon"
               >
                 <FcLike size={24} className="icon" />
               </button>
             ) : (
               <button
+                type="button"
                 className="btn"
-                testid="likeIcon"
+                data-testid="likeIcon"
                 aria-label="button"
                 onClick={this.onLike}
               >
@@ -73,12 +73,14 @@ class PostItem extends Component {
             )}
             <button
               data-testid="comment icon"
+              type="button"
               aria-label="button"
               className="btn"
             >
               <FaRegComment size={24} className="icon" />
             </button>
             <button
+              type="button"
               data-testid="share icon"
               aria-label="button"
               className="btn"

@@ -32,7 +32,7 @@ class Header extends Component {
   rendersearchButton = () => (
     <SearchContext.Consumer>
       {value => {
-        const {searchInput, isClicked} = this.state
+        const {searchInput} = this.state
         const {getSearchData} = value
         const onSearchList = () => {
           getSearchData(searchInput)
@@ -45,7 +45,7 @@ class Header extends Component {
           <button
             aria-label="button"
             type="button"
-            testid="searchIcon"
+            data-testid="searchIcon"
             className="s-i-cont btn"
             onClick={onSearchList}
           >
@@ -77,8 +77,9 @@ class Header extends Component {
               <h1 className="title_heading">Insta Share</h1>
             </div>
             <button
+              aria-label="button"
               onClick={this.showContent}
-              testid="hamburgerIcon"
+              data-testid="hamburgerIcon"
               className="hamburgerButton"
               type="button"
             >
@@ -104,6 +105,7 @@ class Header extends Component {
                 Logout
               </button>
               <button
+                aria-label="button"
                 onClick={this.showContent}
                 type="button"
                 className="hamburgerButton"

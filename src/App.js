@@ -18,7 +18,7 @@ class App extends Component {
   upadtePosttoSearch = data => this.setState({searchList: data})
 
   getSearchData = async searchInput => {
-    this.setState({searchInput, searchResult: 'IN_PROGRESS'})
+    this.setState({searchResult: 'IN_PROGRESS'})
     const url = `https://apis.ccbp.in/insta-share/posts?search=${searchInput}`
     const token = Cookies.get('jwt_token')
     const options = {
